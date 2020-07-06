@@ -11,7 +11,20 @@
 
 void selection_sort(struct data data[], int num);
 
-void selection_sort(struct data data[], int num) {}
+void selection_sort(struct data data[], int num) {
+  for (int i = 0; i < num; i++) {
+    int min = i;
+    for (int cur = i + 1; cur < num; cur++) {
+      if (data[min].key > data[cur].key) {
+        min = cur;
+      }
+    }
+
+    struct data temp = data[i];
+    data[i] = data[min];
+    data[min] = temp;
+  }
+}
 
 /*=============================================*/
 
