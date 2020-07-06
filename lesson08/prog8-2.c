@@ -11,7 +11,17 @@
 
 void bubble_sort(struct data data[], int num);
 
-void bubble_sort(struct data data[], int num) {}
+void bubble_sort(struct data data[], int num) {
+  for (int i = 0; i < num - 1; i++) {
+    for (int cur = num - 1; cur >= i + 1; cur--) {
+      if ((data + cur)->key < (data + cur - 1)->key) {
+        struct data temp = data[cur];
+        data[cur] = data[cur - 1];
+        data[cur - 1] = temp;
+      }
+    }
+  }
+}
 
 /*=============================================*/
 
