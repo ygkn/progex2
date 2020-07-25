@@ -1,36 +1,29 @@
 /*********************************************
   prog13-3.c
-    Student ID: 
+    Student ID:
     Name:
 **********************************************/
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
+
 #include "tree-common.h"
 
 void traverse_dfs_inorder(struct node *node, struct queue *queue);
 
 int is_binary_search_tree(struct tree *tree);
 
-void traverse_dfs_inorder(struct node *node, struct queue *queue)
-{
-}
+void traverse_dfs_inorder(struct node *node, struct queue *queue) {}
 
-int is_binary_search_tree(struct tree *tree)
-{
-    return 0;
-}
+int is_binary_search_tree(struct tree *tree) { return 0; }
 
 /*=============================================*/
 
-void test1()
-{
-}
+void test1() {}
 
-int main()
-{
-    test1();
-    
-    return 0;
+int main() {
+  test1();
+
+  return 0;
 }

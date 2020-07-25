@@ -8,17 +8,17 @@
 #include <stdio.h>
 
 struct data {
-    int key;
-    char value;
+  int key;
+  char value;
 };
 
 struct element {
-    struct data *data;
-    struct element *next;
+  struct data *data;
+  struct element *next;
 };
 
 struct list {
-    struct element *top;
+  struct element *top;
 };
 
 extern struct list *create_list();
