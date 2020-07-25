@@ -30,12 +30,23 @@ void test1() {
   int num = sizeof(data) / sizeof(data[0]);
 
   struct list *list = create_list();
+
+  assert(search_list(list, 1) == NULL);
+
   int i;
   for (i = 0; i < num; i++) {
     insert_list(list, data[i]);
   }
 
   assert(search_list(list, 1)->value == 'f');
+
+  assert(insert_list(list, data[0]) == 0);
+
+  assert(delete_list(list, 1) == 1);
+
+  assert(search_list(list, 1) == NULL);
+
+  assert(delete_list(list, 1) == 0);
 
   print(list);
   printf("Success: %s\n", __func__);
