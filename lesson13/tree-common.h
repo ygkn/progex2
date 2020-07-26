@@ -6,22 +6,21 @@
 #define TREE_COMMON_H
 
 #include <stdio.h>
-
 #include "queue.h"
 
 struct data {
-  int key;
-  char value;
+    int key;
+    char value;
 };
 
 struct node {
-  struct data *data;
-  struct node *left;
-  struct node *right;
+    struct data *data;
+    struct node *left;
+    struct node *right;
 };
 
 struct tree {
-  struct node *root;
+    struct node *root;
 };
 
 extern struct tree *create_tree();

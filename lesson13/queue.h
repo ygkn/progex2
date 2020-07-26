@@ -7,16 +7,15 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
 #include "tree-common.h"
 
 #define MAX_NODE_NUM 30
 
 struct queue {
-  struct node *data[MAX_NODE_NUM];
-  int size;
-  int top;
-  int rear;
+    struct node *data[MAX_NODE_NUM];
+    int size;
+    int top;
+    int rear;
 };
 
 extern struct queue *create_queue(int size);
