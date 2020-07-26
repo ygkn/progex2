@@ -14,11 +14,32 @@ void traverse_dfs_preorder(struct node *node, struct queue *queue);
 void traverse_dfs_inorder(struct node *node, struct queue *queue);
 void traverse_dfs_postorder(struct node *node, struct queue *queue);
 
-void traverse_dfs_preorder(struct node *node, struct queue *queue) {}
+void traverse_dfs_preorder(struct node *node, struct queue *queue) {
+  if (node == NULL) {
+    return;
+  }
+  enqueue(queue, node);
+  traverse_dfs_preorder(node->left, queue);
+  traverse_dfs_preorder(node->right, queue);
+}
 
-void traverse_dfs_inorder(struct node *node, struct queue *queue) {}
+void traverse_dfs_inorder(struct node *node, struct queue *queue) {
+  if (node == NULL) {
+    return;
+  }
+  traverse_dfs_inorder(node->left, queue);
+  enqueue(queue, node);
+  traverse_dfs_inorder(node->right, queue);
+}
 
-void traverse_dfs_postorder(struct node *node, struct queue *queue) {}
+void traverse_dfs_postorder(struct node *node, struct queue *queue) {
+  if (node == NULL) {
+    return;
+  }
+  traverse_dfs_postorder(node->left, queue);
+  traverse_dfs_postorder(node->right, queue);
+  enqueue(queue, node);
+}
 
 /*=============================================*/
 
